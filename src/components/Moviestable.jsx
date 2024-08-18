@@ -1,7 +1,7 @@
 import React from "react";
 import ".././App.css";
 
-function Moviestable({ search, watchlist, removewatchlist, setWatchlist }) {
+function Moviestable({ search, watchlist, removewatchlist, setWatchlist,buttype }) {
   function sortasc() {
     let sortedincreasing = [...watchlist].sort((movieA, movieB) => {
       return parseInt(movieA.Year) - parseInt(movieB.Year);
@@ -34,7 +34,14 @@ function Moviestable({ search, watchlist, removewatchlist, setWatchlist }) {
           </tr>
         </thead>
         <tbody>
-          {watchlist
+          {watchlist.filter((movie)=>{
+            if(buttype=="All Types"){
+              return true;
+            }
+            else{
+              return movie.Type === buttype;
+            }
+          })
             .filter((movie) => {
               return movie.Title.toLowerCase().includes(
                 search.toLocaleLowerCase()
