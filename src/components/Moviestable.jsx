@@ -35,7 +35,7 @@ function Moviestable({ search, watchlist, removewatchlist, setWatchlist,buttype 
         </thead>
         <tbody>
           {watchlist.filter((movie)=>{
-            if(buttype=="All Types"){
+            if(buttype==="All Types"){
               return true;
             }
             else{
@@ -50,7 +50,7 @@ function Moviestable({ search, watchlist, removewatchlist, setWatchlist,buttype 
             .map((movie) => (
               <tr key={movie.imdbID}>
                 <td className="img-cell">
-                  <img src={movie.Poster}></img>
+                  <img src={movie.Poster} alt="movie poster"></img>
                 </td>
                 <td>{movie.Title}</td>
                 <td>{movie.Year}</td>

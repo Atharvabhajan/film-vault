@@ -9,7 +9,7 @@ function Movies({addwatchlist,removewatchlist,watchlist}) {
   const [pageno, setPage] = useState(1);
 
   const prevpage = () => {
-    if (pageno == 1) {
+    if (pageno === 1) {
       setPage(1);
     } else {
       setPage(pageno - 1);

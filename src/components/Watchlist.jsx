@@ -22,7 +22,7 @@ function Watchlist({ watchlist, removewatchlist, setWatchlist, type }) {
             <button
               onClick={() => handelcolor(movietype)}
               key={index}
-              className={movietype==buttype?'active':'inactive'}
+              className={movietype===buttype?'active':'inactive'}
             >
               {movietype.charAt(0).toUpperCase() +
                 movietype.slice(1).toLowerCase()}
